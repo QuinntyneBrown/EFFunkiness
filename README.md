@@ -2,7 +2,7 @@
 
 An example of how you can run into a InvalidOperationException stating that "There is already an open DataReader associated with this Connection which must be closed first." using Entity Framework Core. 
 
-## To Run the Api
+## To Run the Api (Swagger)
 
 Using the command line console
 
