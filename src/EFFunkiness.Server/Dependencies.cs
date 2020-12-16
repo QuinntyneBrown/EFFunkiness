@@ -1,13 +1,11 @@
-using EFFunkiness.Server.Controllers;
 using EFFunkiness.Server.Data;
+using EFFunkiness.Server.Queries;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.OpenApi.Models;
 using System;
-using System.Collections.Generic;
-using System.IdentityModel.Tokens.Jwt;
 
 namespace EFFunkiness.Server
 {
@@ -38,21 +36,9 @@ namespace EFFunkiness.Server
                 options.CustomSchemaIds(x => x.FullName);
             });
 
-
-
-            services.AddHttpContextAccessor();
-
-
             services.AddMediatR(typeof(GetClients));
 
             services.AddTransient<IEFFunkinessDbContext, EFFunkinessDbContext>();
-
-            var jwtSecurityTokenHandler = new JwtSecurityTokenHandler
-            {
-                InboundClaimTypeMap = new Dictionary<string, string>()
-            };
-
-
 
             services.AddDbContext<EFFunkinessDbContext>(options =>
             {
