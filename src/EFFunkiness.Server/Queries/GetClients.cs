@@ -24,7 +24,6 @@ namespace EFFunkiness.Server.Queries
 
             public async Task<Response> Handle(Request request, CancellationToken cancellationToken)
             {
-
                 var clients = new List<ClientDto>();
 
                 var query = from client in _context.Clients
@@ -32,7 +31,7 @@ namespace EFFunkiness.Server.Queries
 
                 foreach (var client in query)
                 {
-                    var user = _context.Users.Find(client.CreatedByUserId);
+                    var user = _context.Users.Single(x => x.UserId == client.CreatedByUserId);
 
                     clients.Add(new ClientDto(client.ClientId, client.Name, new UserDto(user.UserId, user.Name)));
                 }
