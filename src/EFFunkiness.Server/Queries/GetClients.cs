@@ -25,27 +25,19 @@ namespace EFFunkiness.Server.Queries
 
             public async Task<Response> Handle(Request request, CancellationToken cancellationToken)
             {
-                try
+                var clients = new List<ClientDto>();
+
+                var query = from client in _context.Clients
+                            select client;
+
+                foreach (var client in query)
                 {
-                    var clients = new List<ClientDto>();
+                    var user = _context.Users.Single(x => x.UserId == client.CreatedByUserId);
 
-                    var query = from client in _context.Clients
-                                select client;
-
-                    foreach (var client in query)
-                    {
-                        var user = _context.Users.Single(x => x.UserId == client.CreatedByUserId);
-
-                        clients.Add(new ClientDto(client.ClientId, client.Name, new UserDto(user.UserId, user.Name)));
-                    }
-
-                    return new Response(clients);
-                }
-                catch(Exception e)
-                {
-                    throw e;
+                    clients.Add(new ClientDto(client.ClientId, client.Name, new UserDto(user.UserId, user.Name)));
                 }
 
+                return new Response(clients);
             }
         }
     }

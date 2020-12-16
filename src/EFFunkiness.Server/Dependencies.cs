@@ -1,5 +1,6 @@
 using EFFunkiness.Server.Data;
 using EFFunkiness.Server.Queries;
+using Hellang.Middleware.ProblemDetails;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
@@ -43,11 +44,22 @@ namespace EFFunkiness.Server
             services.AddDbContext<EFFunkinessDbContext>(options =>
             {
                 options.UseSqlServer(configuration["Data:DefaultConnection:ConnectionString"],
-                    builder => builder.MigrationsAssembly("EFFunkiness.Server"))
-                        //.EnableRetryOnFailure())
+                    (builder) => {
+
+                        builder.MigrationsAssembly("EFFunkiness.Server");
+
+                        if (Convert.ToBoolean(configuration["EnableRetryOnFailure"]))
+                        {
+                            builder.EnableRetryOnFailure();
+                        }    
+
+                    })
+
                 .UseLoggerFactory(EFFunkinessDbContext.ConsoleLoggerFactory)
                 .EnableSensitiveDataLogging();
             });
+
+            services.AddProblemDetails();
 
             services.AddControllers();
         }
