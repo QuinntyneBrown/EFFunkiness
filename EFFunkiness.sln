@@ -13,7 +13,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EFFunkiness.FunctionalTests
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{812683F7-3C4C-40C0-AC4B-6B035D4CC855}"
 	ProjectSection(SolutionItems) = preProject
-		cliSettings.json = cliSettings.json
 		README.md = README.md
 	EndProjectSection
 EndProject
