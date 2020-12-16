@@ -13,7 +13,7 @@ Using the command line console
 
 Using the command line console
 
-1. Excute `dotnet test`
+1. Execute `dotnet test`
 
 
 ## Funkiness
