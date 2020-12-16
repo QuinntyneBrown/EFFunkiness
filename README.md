@@ -37,7 +37,7 @@ foreach (var client in query)
 
 ```
 
-If you enabled automatic retries (see snippet below), you will never see this exception.
+If you enabled automatic retries (see snippet below), you will not experience any issues.
 
 ```csharp
 
