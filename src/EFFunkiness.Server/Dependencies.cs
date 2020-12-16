@@ -43,8 +43,8 @@ namespace EFFunkiness.Server
             services.AddDbContext<EFFunkinessDbContext>(options =>
             {
                 options.UseSqlServer(configuration["Data:DefaultConnection:ConnectionString"],
-                    builder => builder.MigrationsAssembly("EFFunkiness.Server")
-                        .EnableRetryOnFailure())
+                    builder => builder.MigrationsAssembly("EFFunkiness.Server"))
+                        //.EnableRetryOnFailure())
                 .UseLoggerFactory(EFFunkinessDbContext.ConsoleLoggerFactory)
                 .EnableSensitiveDataLogging();
             });

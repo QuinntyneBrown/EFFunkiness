@@ -1,15 +1,21 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.26124.0
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30711.63
 MinimumVisualStudioVersion = 15.0.26124.0
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{7DE90B9F-0601-4BCD-ABC8-2A4E645C6EFF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EFFunkiness.Server", "src\EFFunkiness.Server\EFFunkiness.Server.csproj", "{6D179203-0AAF-491E-9E2C-B9739891AD17}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EFFunkiness.Server", "src\EFFunkiness.Server\EFFunkiness.Server.csproj", "{6D179203-0AAF-491E-9E2C-B9739891AD17}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{5526D008-BA70-4DD9-A8BC-9A00411E2D55}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EFFunkiness.FunctionalTests", "test\EFFunkiness.FunctionalTests\EFFunkiness.FunctionalTests.csproj", "{F76A7B0B-D80A-4185-B3DD-4634C9B228C5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EFFunkiness.FunctionalTests", "test\EFFunkiness.FunctionalTests\EFFunkiness.FunctionalTests.csproj", "{F76A7B0B-D80A-4185-B3DD-4634C9B228C5}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{812683F7-3C4C-40C0-AC4B-6B035D4CC855}"
+	ProjectSection(SolutionItems) = preProject
+		cliSettings.json = cliSettings.json
+		README.md = README.md
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -19,9 +25,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 		Release|x64 = Release|x64
 		Release|x86 = Release|x86
-	EndGlobalSection
-	GlobalSection(SolutionProperties) = preSolution
-		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{6D179203-0AAF-491E-9E2C-B9739891AD17}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
@@ -49,8 +52,14 @@ Global
 		{F76A7B0B-D80A-4185-B3DD-4634C9B228C5}.Release|x86.ActiveCfg = Release|Any CPU
 		{F76A7B0B-D80A-4185-B3DD-4634C9B228C5}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{6D179203-0AAF-491E-9E2C-B9739891AD17} = {7DE90B9F-0601-4BCD-ABC8-2A4E645C6EFF}
 		{F76A7B0B-D80A-4185-B3DD-4634C9B228C5} = {5526D008-BA70-4DD9-A8BC-9A00411E2D55}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {161EDEDF-9AAD-40F5-9788-F59A005AF322}
 	EndGlobalSection
 EndGlobal
