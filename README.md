@@ -18,7 +18,7 @@ Using the command line console
 
 ## Funkiness
 
-This will normally throw a InvalidOperationException stating the Data Reader is open:
+This will normally throw an InvalidOperationException stating the Data Reader is open:
 
 ```csharp
 
