@@ -18,7 +18,7 @@ Using the command line console
 
 ## Funkiness
 
-The code below will normally throw an InvalidOperationException because while a DataReader is open, the Connection is in use exclusively by that DataReader. You cannot execute any commands for the Connection, including creating another DataReader, until the original DataReader is closed.
+The code below will normally throw an InvalidOperationException because while a the underlying DataReader the context is using is open, the Connection is in use exclusively by that DataReader. You cannot execute any commands for the Connection, including creating another DataReader, until the original DataReader is closed.
 
 ```csharp
 
