@@ -43,7 +43,7 @@ If you enabled automatic retries (see snippet below), you will never see this ex
 
 services.AddDbContext<EFFunkinessDbContext>(options =>
 {
-    options.UseSqlServer(configuration["Data:DefaultConnection:ConnectionString"],
+    options.UseSqlServer("your-connectionstring",
         builder => builder.EnableRetryOnFailure());
 });
 
