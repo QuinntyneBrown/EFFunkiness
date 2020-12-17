@@ -1,6 +1,5 @@
 ﻿using EFFunkiness.Server.Data;
 using MediatR;
-using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading;
@@ -30,7 +29,7 @@ namespace EFFunkiness.Server.Queries
                 var query = from client in _context.Clients
                             select client;
 
-                foreach (var client in query)
+                foreach (var client in await query)
                 {
                     var user = _context.Users.Single(x => x.UserId == client.CreatedByUserId);
 

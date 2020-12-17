@@ -10,7 +10,10 @@ namespace EFFunkiness.Server.Data
             :base(options) { }
 
         public static readonly ILoggerFactory ConsoleLoggerFactory
-            = LoggerFactory.Create(builder => { builder.AddConsole(); });
+            = LoggerFactory.Create(builder => { builder
+                .AddConsole()
+                .AddFilter("", LogLevel.Information); 
+            });
 
         public DbSet<Client> Clients { get; private set; }
         public DbSet<User> Users { get; private set; }

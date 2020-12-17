@@ -10,7 +10,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace EFFunkiness.Server.Migrations
 {
     [DbContext(typeof(EFFunkinessDbContext))]
-    [Migration("20201216005547_InitialCreate")]
+    [Migration("20201216135249_InitialCreate")]
     partial class InitialCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

@@ -37,6 +37,8 @@ foreach (var client in query)
 
 ```
 
+### EnableRetryOnFailure
+
 If you enabled automatic retries (see snippet below), you will not experience any issues.
 
 ```csharp
@@ -46,5 +48,20 @@ services.AddDbContext<EFFunkinessDbContext>(options =>
     options.UseSqlServer("your-connectionstring",
         builder => builder.EnableRetryOnFailure());
 });
+
+```
+
+### ToListAsync
+
+You could materialize the query and use ToList(). That would be synchronise and not good. Entity Framework gives you an extension called ToListAsync() that seems to be percisely for this situation. It gives you the streaming behaviour and manages the connections.
+
+```csharp
+
+foreach (var client in await query.ToListAsync())
+{
+    var user = _context.Users.Single(x => x.UserId == client.CreatedByUserId);
+
+    clients.Add(new ClientDto(client.ClientId, client.Name, new UserDto(user.UserId, user.Name)));
+}
 
 ```

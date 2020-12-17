@@ -28,11 +28,9 @@ namespace EFFunkiness.Server.Data
 
             void CreateClientIfDoenstExist(string name, User createdByUser, EFFunkinessDbContext context)
             {
-                var client = context.Clients.SingleOrDefault(x => x.Name == name);
-
-                if (client == null)
+                if (context.Clients.SingleOrDefault(x => x.Name == name) == null)
                 {
-                    context.Clients.Add(new Client() { Name = name, CreatedByUserId = createdByUser.UserId });
+                    context.Clients.Add(new Client { Name = name, CreatedByUserId = createdByUser.UserId });
                 }
             }
         }

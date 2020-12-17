@@ -19,13 +19,13 @@ namespace EFFunkiness.Server
                 options.SwaggerDoc("v1", new OpenApiInfo
                 {
                     Version = "v1",
-                    Title = "",
-                    Description = "",
+                    Title = "EF Funkiness",
+                    Description = "Examining the behaviour of the enabling retries and the InvalidOperation Exception when executing two queries on the same context at the same time.",
                     TermsOfService = new Uri("https://example.com/terms"),
                     Contact = new OpenApiContact
                     {
-                        Name = "",
-                        Email = ""
+                        Name = "Quinntyne Browm",
+                        Email = "quinntynebrown@gmail.com"
                     },
                     License = new OpenApiLicense
                     {
@@ -51,10 +51,8 @@ namespace EFFunkiness.Server
                         if (Convert.ToBoolean(configuration["EnableRetryOnFailure"]))
                         {
                             builder.EnableRetryOnFailure();
-                        }    
-
+                        }
                     })
-
                 .UseLoggerFactory(EFFunkinessDbContext.ConsoleLoggerFactory)
                 .EnableSensitiveDataLogging();
             });
